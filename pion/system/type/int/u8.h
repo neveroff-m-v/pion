@@ -7,10 +7,13 @@ class u8 : private obj
 {
 public:
 	u8();
+	u8(__int&& Value);
 
-	void operator=(__int Value);
+	void operator=(__int& Value);
 	operator __int();
 
+	void operator++();
+	void operator--();
 	__int operator[](__int Mask);
 
 private:
@@ -22,7 +25,12 @@ u8::u8()
 	Value = 0;
 }
 
-void u8::operator=(__int Value)
+u8::u8(__int&& Value)
+{
+	this->Value = Value;
+}
+
+void u8::operator=(__int& Value)
 {
 	this->Value = Value;
 }
@@ -30,6 +38,16 @@ void u8::operator=(__int Value)
 u8::operator __int()
 {
 	return (__int) Value;
+}
+
+void u8::operator++()
+{
+	Value++;
+}
+
+void u8::operator--()
+{
+	Value--;
 }
 
 __int u8::operator[](__int Mask)

@@ -7,10 +7,13 @@ class u64 : private obj
 {
 public:
 	u64();
+	u64(__int&& Value);
 
-	void operator=(__int Value);
+	void operator=(__int& Value);
 	operator __int();
 
+	void operator++();
+	void operator--();
 	__int operator[](__int Mask);
 
 private:
@@ -22,7 +25,12 @@ u64::u64()
 	Value = 0;
 }
 
-void u64::operator=(__int Value)
+u64::u64(__int&& Value)
+{
+	this->Value = Value;
+}
+
+void u64::operator=(__int& Value)
 {
 	this->Value = Value;
 }
@@ -30,6 +38,16 @@ void u64::operator=(__int Value)
 u64::operator __int()
 {
 	return (__int)Value;
+}
+
+void u64::operator++()
+{
+	Value++;
+}
+
+void u64::operator--()
+{
+	Value--;
 }
 
 __int u64::operator[](__int Mask)

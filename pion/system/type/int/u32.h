@@ -7,8 +7,9 @@ class u32 : private obj
 {
 public:
 	u32();
+	u32(__int&& Value);
 
-	void operator=(__int Value);
+	void operator=(__int& Value);
 	operator __int();
 
 	void operator++();
@@ -24,7 +25,12 @@ u32::u32()
 	Value = 0;
 }
 
-void u32::operator=(__int Value)
+u32::u32(__int&& Value)
+{
+	this->Value = Value;
+}
+
+void u32::operator=(__int& Value)
 {
 	this->Value = Value;
 }
@@ -47,7 +53,6 @@ void u32::operator--()
 __int u32::operator[](__int Mask)
 {
 	__int Result = (__int)Value & Mask;
-	printf("%d ", Result);
 	for (; !(Mask & 0x1) && Result; Mask >>= 1, Result >>= 1) {}
 	return Result;
 }

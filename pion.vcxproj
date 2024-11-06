@@ -152,6 +152,10 @@
     <ClInclude Include="pion\system\type\str\str.h" />
     <ClInclude Include="pion\system\type\str\utf16.h" />
     <ClInclude Include="pion\system\type\str\utf8.h" />
+    <ClInclude Include="pion\system\type\val\.h" />
+    <ClInclude Include="pion\system\type\val\complex.h" />
+    <ClInclude Include="pion\system\type\val\decimal.h" />
+    <ClInclude Include="pion\system\type\val\val.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

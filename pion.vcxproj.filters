@@ -74,5 +74,17 @@
     <ClInclude Include="pion\system\type\str\utf16.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="pion\system\type\val\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="pion\system\type\val\val.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="pion\system\type\val\decimal.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="pion\system\type\val\complex.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
